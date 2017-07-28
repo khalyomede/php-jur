@@ -21,7 +21,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Khalyomede\JUR;
 
-$response = JUR::request('update')
+$response = JUR::update()
   ->message('John Doe have successfuly been saved')
   ->success()
   ->toJson();
@@ -36,7 +36,7 @@ require __DIR__ . '/../vendor/autoload.php'; // beware, this path has changed
 
 use Khalyomede\JUR;
 
-$response = JUR::request('update')
+$response = JUR::update()
   ->message('John Doe have successfuly been saved')
   ->success()
   ->toJson();
@@ -58,7 +58,7 @@ You can copy the entire content of the file located at `src/jur.php`. Remove the
 ```php
 $user = createUser(); // hypothetical function that make an insertion and return the created resource
 
-$response = JUR::request('post')
+$response = JUR::post()
   ->message('John Doe have been successfuly created')
   ->data( $user )
   ->success()
@@ -75,13 +75,13 @@ try {
   
   $user = updateUser( $pdo ); // hypothetical function, can throw an Exception
   
-  $response = JUR::request('update')
+  $response = JUR::update()
     ->message('John Doe have successfuly been updated')
     ->data( $user )
     ->success();
 }
 catch( Exception $e ) {
-  $response = JUR::request('update')
+  $response = JUR::update()
     ->message('an error occured while updating John Doe')
     ->code( $pdo->errorInfo()[1] )
     ->error();
@@ -106,18 +106,18 @@ try {
   
   $users = getUsersByEmail( $email );
   
-  $response = JUR::request('get')
+  $response = JUR::get()
     ->data( $users )
     ->success();
 }
 catch( InvalidArgumentException $e ) {
-  $response = JUR::request('get')
+  $response = JUR::get()
     ->message( $e->getMessage() )
     ->code( $e->getCode() )
     ->fail();
 }
 catch( Exception $e ) {
-  $response = JUR::request('get')
+  $response = JUR::get()
     ->message('an error occured while trying to fetch users')
     ->code( $pdo->errorInfo()[1] )
     ->error();
@@ -130,7 +130,7 @@ $response = $response->toJson();
 ```php
 $user = getUser(); // hypothetical function
 
-$response = JUR::request('get')
+$response = JUR::get()
   ->data( $user )
   ->success()
   ->toArray();
@@ -143,7 +143,7 @@ This function can be slow if the data is huge because of the function that conve
 ```php
 $user = getUser(); // hypothetical function
 
-$response = JUR::request('get')
+$response = JUR::get()
   ->data ( $user )
   ->success()
   ->toObject();
