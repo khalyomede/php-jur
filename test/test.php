@@ -8,4 +8,5 @@ $jur = JUR::put()
 	->success()
 	->message('test')
 	->data([['name' => 'John Doe'], ['name' => 'Elizabeth Jones']])
-	->toObject();
+	->toObject()
+	->testouille();

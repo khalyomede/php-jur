@@ -6,8 +6,6 @@
 
 namespace Khalyomede;
 
-use Khalyomede\JurMethodNotFoundException;
-
 class JUR {
 	const ERROR_METHOD_NOT_FOUND_MSG = 'this method does not exists';
 	const ERROR_METHOD_NOT_FOUND_CODE = -1;
@@ -112,7 +110,7 @@ class JUR {
 	public function toObject() {
 		return json_decode( json_encode( self::buildResponse() ) );
 	}
-	
+
 	public static function reset() {
 		self::$request = self::DEFAULT_REQUEST;
 		self::$status = self::DEFAULT_STATUS;
