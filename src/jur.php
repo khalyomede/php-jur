@@ -124,9 +124,6 @@ class JUR {
 		else if( self::isStatusMethod() ) {
 			self::$status = self::methodValue();
 		}
-		else {
-			throw new JurMethodNotFoundException( self::ERROR_METHOD_NOT_FOUND_MSG, self::ERROR_METHOD_NOT_FOUND_CODE );
-		}
 	}
 
 	private static function isRequestMethod() {
