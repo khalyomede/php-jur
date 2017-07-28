@@ -1,6 +1,8 @@
 # php-jur
 PHP class that follows the JSON Uniform Response standard
 
+[![GitHub tag](https://img.shields.io/github/tag/khalyomede/php-jur.svg)]()
+
 ## Why should I use this library
 JUR (JSON Uniform Response) is as its title says a consistent way to deliver resource through JSON response. It helps a lot with debugging and maintaining the API. For more information about this standard, you can access [the documentation](https://github.com/khalyomede/jur). This library is the implementation of these guidelines.
 
