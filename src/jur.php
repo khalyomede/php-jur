@@ -7,11 +7,6 @@
 namespace Khalyomede;
 
 class JUR {
-	const ERROR_METHOD_NOT_FOUND_MSG = 'this method does not exists';
-	const ERROR_METHOD_NOT_FOUND_CODE = -1;
-
-	const METHOD_REQUEST = 'request';
-
 	const REQUEST_GET = 'get';
 	const REQUEST_POST = 'post';
 	const REQUEST_PUT = 'put';
@@ -39,6 +34,7 @@ class JUR {
 	 * @param string $method
 	 * @param string $arguments
 	 * @return self
+	 * @see http://php.net/manual/fr/language.oop5.overloading.php#object.callstatic
 	 */
 	public static function __callStatic( $method, $arguments ) {
 		self::$method = $method;
@@ -51,6 +47,8 @@ class JUR {
 	/**
 	 * @param string $method
 	 * @param string $arguments
+	 * @return $this
+	 * @see http://php.net/manual/fr/language.oop5.overloading.php#object.callstatic
 	 */
 	public function __call( $method, $arguments ) {
 		self::$method = $method;
