@@ -109,12 +109,17 @@ class JUR {
 		return json_decode( json_encode( self::buildResponse() ) );
 	}
 
+	/**
+	 * @return self
+	 */
 	public static function reset() {
 		self::$request = self::DEFAULT_REQUEST;
 		self::$status = self::DEFAULT_STATUS;
 		self::$message = self::DEFAULT_MESSAGE;
 		self::$code = self::DEFAULT_CODE;
 		self::$data = self::DEFAULT_DATA;
+
+		return new self;
 	}
 
 	private function checkMethod() {
