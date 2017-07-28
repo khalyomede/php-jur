@@ -70,7 +70,7 @@ $response = JUR::reset()
 [back to the example list](#examples)
 ## Example of usage 2 : sending an error message after an update
 ```php
-$response = null;
+$response = JUR::reset()->update();
 $pdo = null;
 
 try {
@@ -78,16 +78,12 @@ try {
   
   $user = updateUser( $pdo ); // hypothetical function, can throw an Exception
   
-  $response = JUR::reset()
-    ->update()
-    ->message('John Doe have successfuly been updated')
+  $response = JUR::message('John Doe have successfuly been updated')
     ->data( $user )
     ->success();
 }
 catch( Exception $e ) {
-  $response = JUR::reset()
-    ->update()
-    ->message('an error occured while updating John Doe')
+  $response = JUR::message('an error occured while updating John Doe')
     ->code( $pdo->errorInfo()[1] )
     ->error();
 }
@@ -100,7 +96,7 @@ $response = $response->toJson();
 const ERROR_EMAIL_INCORRECT_MSG = 'this email is incorrectly formed';
 const ERROR_EMAIL_INCORRECT_CODE = -1:
 
-$response = null;
+$response = JUR::reset()->get();
 
 try {
   $email = filter_var( $_GET['email'], FILTER_SANITIZE_EMAIL );
@@ -111,22 +107,16 @@ try {
   
   $users = getUsersByEmail( $email );
   
-  $response = JUR::reset()
-    ->get()
-    ->data( $users )
+  $response = JUR::data( $users )
     ->success();
 }
 catch( InvalidArgumentException $e ) {
-  $response = JUR::reset()
-    ->get()
-    ->message( $e->getMessage() )
+  $response = JUR::message( $e->getMessage() )
     ->code( $e->getCode() )
     ->fail();
 }
 catch( Exception $e ) {
-  $response = JUR::reset()
-    ->get()
-    ->message('an error occured while trying to fetch users')
+  $response = JUR:message('an error occured while trying to fetch users')
     ->code( $pdo->errorInfo()[1] )
     ->error();
 }
