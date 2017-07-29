@@ -122,6 +122,13 @@ class JUR {
 		return new self;
 	}
 
+	/**
+	 * @return self
+	 */
+	public static function requested() {
+		self::$requested = self::currentTimestampsMilliseconds();
+	}
+
 	private function checkMethod() {
 		if( self::isRequestMethod() ) {
 			self::$request = self::methodValue();
