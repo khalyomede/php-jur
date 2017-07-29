@@ -17,12 +17,16 @@ class JUR {
 	const STATUS_ERROR = 'error';
 
 	const DEFAULT_REQUEST = '';
+	const DEFAULT_REQUESTED = 0;
+	const DEFAULT_RESOLVED = 0;
+	const DEFAULT_ELAPSED = 0;
 	const DEFAULT_STATUS = '';
 	const DEFAULT_MESSAGE = '';
 	const DEFAULT_CODE = 0;
 	const DEFAULT_DATA = null;
 
 	public static $request = self::DEFAULT_REQUEST;
+	public static $requested = self::DEFAULT_REQUESTED;
 	public static $status = self::DEFAULT_STATUS;
 	public static $message = self::DEFAULT_MESSAGE;
 	public static $code = self::DEFAULT_CODE;
