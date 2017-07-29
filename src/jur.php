@@ -160,4 +160,8 @@ class JUR {
 			'data' => self::$data
 		];
 	}
+
+	private function currentTimestampsMilliseconds() {
+		return round(microtime(true) * 1000);
+	}
 }
