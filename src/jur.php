@@ -35,6 +35,7 @@ class JUR {
 	public static $data = self::DEFAULT_DATA;
 
 	private static $method = '';
+	private static $arguments = [];
 
 	/**
 	 * @param string $method
@@ -135,7 +136,19 @@ class JUR {
 	 * @return self
 	 */
 	public static function requested() {
-		self::$requested = self::currentTimestampsMilliseconds();
+		self::$requested = self::timestampsMilliseconds();
+
+		return new self;
+	}
+
+	/**
+	 * @return self
+	 */
+	public static function resolved() {
+		self::$resolved = self::timestampsMilliseconds();
+		self::$elapsed = self::$resolved - self::$requested;
+
+		return new self;
 	}
 
 	private function checkMethod() {
@@ -145,6 +158,10 @@ class JUR {
 		else if( self::isStatusMethod() ) {
 			self::$status = self::methodValue();
 		}
+	}
+
+	private function availableTimestampsMethods() {
+		return [ 'requested', 'resolved' ];
 	}
 
 	private static function isRequestMethod() {
@@ -170,6 +187,9 @@ class JUR {
 	private static function buildResponse() {
 		return [
 			'request' => self::$request,
+			'requested' => self::$requested,
+			'resolved' => self::$resolved,
+			'elapsed' => self::$elapsed,
 			'status' => self::$status,
 			'message' => self::$message,
 			'code' => self::$code,
@@ -177,7 +197,7 @@ class JUR {
 		];
 	}
 
-	private function currentTimestampsMilliseconds() {
+	private function timestampsMilliseconds() {
 		return round(microtime(true) * 1000);
 	}
 }
