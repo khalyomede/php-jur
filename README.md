@@ -55,6 +55,7 @@ You can copy the entire content of the file located at `src/jur.php`. Remove the
 - [Example of usage 3 : sending a fail error while getting a resource](#example-of-usage-3--sending-a-fail-error-while-getting-a-resource)
 - [Example of usage 4 : getting response to array](#example-of-usage-4--getting-response-to-array)
 - [Example of usage 5 : getting response to object](#example-of-usage-5--getting-response-to-object)
+- [Example of usage 6 : getting response to JSON](#example-of-usage-6--getting-response-to-json)
 
 ## Example of usage 1 : sending a success message after a creation
 ```php
@@ -148,6 +149,18 @@ $response = JUR::reset()
   ->success()
   ->toObject();
 ```
+[back to the example list](#examples)
+## Example of usage 6 : getting response to JSON
+```php
+$user = getUser(); // hypothetical function
+
+$response = JUR::reset()
+  ->get()
+  ->data ( $user )
+  ->success()
+  ->toJson();
+```
+
 [back to the example list](#examples)
 ## Semantic Version ready
 
