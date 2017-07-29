@@ -7,6 +7,9 @@ PHP class that follows the JSON Uniform Response standard
 ## Why should I use this library
 JUR (JSON Uniform Response) is as its title says a consistent way to deliver resource through JSON response. It helps a lot with debugging and maintaining the API. For more information about this standard, you can access [the documentation](https://github.com/khalyomede/jur). This library is the implementation of these guidelines.
 
+## JUR implemented version
+PHP-JUR implements version **1.1** of this standard.
+
 ## Installation
 This project needs [Composer](https://getcomposer.org/) to be installed. If you prefer not using this dependency manager, go to the section [Installation without composer](#installation-without-composer).
 In your project folder root, open a command prompt and enter :
