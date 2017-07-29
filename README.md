@@ -59,10 +59,11 @@ You can copy the entire content of the file located at `src/jur.php`. Remove the
 
 ## Example of usage 1 : sending a success message after a creation
 ```php
+JUR::reset()->requested();
+
 $user = createUser(); // hypothetical function that make an insertion and return the created resource
 
-$response = JUR::reset()
-  ->post()
+$response = JUR::post()
   ->message('John Doe have been successfuly created')
   ->data( $user )
   ->success()
@@ -71,7 +72,10 @@ $response = JUR::reset()
 [back to the example list](#examples)
 ## Example of usage 2 : sending an error message after an update
 ```php
-$response = JUR::reset()->update();
+$response = JUR::reset()
+  ->requested()
+  ->update();
+
 $pdo = null;
 
 try {
@@ -97,7 +101,9 @@ $response = $response->toJson();
 const ERROR_EMAIL_INCORRECT_MSG = 'this email is incorrectly formed';
 const ERROR_EMAIL_INCORRECT_CODE = -1:
 
-$response = JUR::reset()->get();
+$response = JUR::reset()
+  ->requested()
+  ->get();
 
 try {
   $email = filter_var( $_GET['email'], FILTER_SANITIZE_EMAIL );
@@ -127,10 +133,11 @@ $response = $response->toJson();
 [back to the example list](#examples)
 ## Example of usage 4 : getting response to array
 ```php
+JUR::reset()->requested();
+
 $user = getUser(); // hypothetical function
 
-$response = JUR::reset()
-  ->get()
+$response = JUR::get()
   ->data( $user )
   ->success()
   ->toArray();
@@ -141,10 +148,11 @@ $response = JUR::reset()
 
 This function can be slow if the data is huge because of the function that convert an array to an object (using json_encode + json_decode technique).
 ```php
+JUR::reset()->requested();
+
 $user = getUser(); // hypothetical function
 
-$response = JUR::reset()
-  ->get()
+$response = JUR::get()
   ->data ( $user )
   ->success()
   ->toObject();
@@ -152,10 +160,11 @@ $response = JUR::reset()
 [back to the example list](#examples)
 ## Example of usage 6 : getting response to JSON
 ```php
+JUR::reset()->requested();
+
 $user = getUser(); // hypothetical function
 
-$response = JUR::reset()
-  ->get()
+$response = JUR::get()
   ->data ( $user )
   ->success()
   ->toJson();
