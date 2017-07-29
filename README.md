@@ -28,6 +28,7 @@ $response = JUR::reset()
   ->update()
   ->message('John Doe have successfuly been saved')
   ->success()
+  ->resolved()
   ->toJson();
   
 // ...
@@ -44,6 +45,7 @@ $response = JUR::reset()
   ->update()
   ->message('John Doe have successfuly been saved')
   ->success()
+  ->resolved()
   ->toJson();
   
 // ...
@@ -70,6 +72,7 @@ $response = JUR::post()
   ->message('John Doe have been successfuly created')
   ->data( $user )
   ->success()
+  ->resolved()
   ->toJson();
 ```
 [back to the example list](#examples)
@@ -96,7 +99,9 @@ catch( Exception $e ) {
     ->error();
 }
 
-$response = $response->toJson();
+$response = $response->
+  ->resolved()
+  ->toJson();
 ```
 [back to the example list](#examples)
 ## Example of usage 3 : sending a fail error while getting a resource
@@ -131,7 +136,9 @@ catch( Exception $e ) {
     ->error();
 }
 
-$response = $response->toJson();
+$response = $response->
+  ->resolved()
+  ->toJson();
 ```
 [back to the example list](#examples)
 ## Example of usage 4 : getting response to array
@@ -143,6 +150,7 @@ $user = getUser(); // hypothetical function
 $response = JUR::get()
   ->data( $user )
   ->success()
+  ->resolved()
   ->toArray();
 ```
 
@@ -158,6 +166,7 @@ $user = getUser(); // hypothetical function
 $response = JUR::get()
   ->data ( $user )
   ->success()
+  ->resolved()
   ->toObject();
 ```
 [back to the example list](#examples)
@@ -170,6 +179,7 @@ $user = getUser(); // hypothetical function
 $response = JUR::get()
   ->data ( $user )
   ->success()
+  ->resolved()
   ->toJson();
 ```
 
