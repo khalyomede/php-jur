@@ -27,6 +27,8 @@ class JUR {
 
 	public static $request = self::DEFAULT_REQUEST;
 	public static $requested = self::DEFAULT_REQUESTED;
+	public static $resolved = self::DEFAULT_RESOLVED;
+	public static $elapsed = self::DEFAULT_ELAPSED;
 	public static $status = self::DEFAULT_STATUS;
 	public static $message = self::DEFAULT_MESSAGE;
 	public static $code = self::DEFAULT_CODE;
