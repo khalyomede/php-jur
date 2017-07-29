@@ -120,6 +120,9 @@ class JUR {
 	 */
 	public static function reset() {
 		self::$request = self::DEFAULT_REQUEST;
+		self::$requested = self::DEFAULT_REQUESTED;
+		self::$resolved = self::DEFAULT_RESOLVED;
+		self::$elapsed = self::DEFAULT_ELAPSED;
 		self::$status = self::DEFAULT_STATUS;
 		self::$message = self::DEFAULT_MESSAGE;
 		self::$code = self::DEFAULT_CODE;
