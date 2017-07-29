@@ -99,9 +99,7 @@ catch( Exception $e ) {
     ->error();
 }
 
-$response = $response->
-  ->resolved()
-  ->toJson();
+$response = $response->resolved()->toJson();
 ```
 [back to the example list](#examples)
 ## Example of usage 3 : sending a fail error while getting a resource
@@ -136,9 +134,7 @@ catch( Exception $e ) {
     ->error();
 }
 
-$response = $response->
-  ->resolved()
-  ->toJson();
+$response = $response->resolved()->toJson();
 ```
 [back to the example list](#examples)
 ## Example of usage 4 : getting response to array
