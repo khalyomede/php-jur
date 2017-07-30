@@ -112,7 +112,7 @@ class JUR {
 	/**
 	 * @return object
 	 */
-	public function toObject() {
+	public static function toObject() {
 		return json_decode( json_encode( self::buildResponse() ) );
 	}
 
@@ -151,7 +151,7 @@ class JUR {
 		return new self;
 	}
 
-	private function checkMethod() {
+	private static function checkMethod() {
 		if( self::isRequestMethod() ) {
 			self::$request = self::methodValue();
 		}
@@ -160,7 +160,7 @@ class JUR {
 		}
 	}
 
-	private function availableTimestampsMethods() {
+	private static function availableTimestampsMethods() {
 		return [ 'requested', 'resolved' ];
 	}
 
@@ -197,7 +197,7 @@ class JUR {
 		];
 	}
 
-	private function timestampsMilliseconds() {
+	private static function timestampsMilliseconds() {
 		return round(microtime(true) * 1000);
 	}
 }
