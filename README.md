@@ -14,7 +14,7 @@ PHP-JUR implements version **1.1** of this standard.
 This project needs [Composer](https://getcomposer.org/) to be installed. If you prefer not using this dependency manager, go to the section [Installation without composer](#installation-without-composer).
 In your project folder root, open a command prompt and enter :
 ```bash
-composer 
+composer require khalyomede/php-jur
 ```
 In any file you whish to use this library, you need to include the autoloader line if it is not done. For example, if you are runing this script in a file located at the root of your project :
 ```php
