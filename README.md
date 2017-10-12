@@ -1,7 +1,7 @@
 # php-jur
 PHP class that follows the JSON Uniform Response standard
 
-[![GitHub tag](https://img.shields.io/github/tag/khalyomede/php-jur.svg)]()
+[![Packagist](https://img.shields.io/packagist/v/khalyomede/php-jur.svg)]()
 ![PHP minimum required version](https://img.shields.io/badge/php-%3E%3D5.3.0-777BB4.svg)
 
 ## Why should I use this library
