@@ -25,6 +25,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Khalyomede\JUR;
 
 $response = JUR::reset()
+  ->requested()
   ->update()
   ->message('John Doe have successfuly been saved')
   ->success()
@@ -42,6 +43,7 @@ require __DIR__ . '/../vendor/autoload.php'; // beware, this path has changed
 use Khalyomede\JUR;
 
 $response = JUR::reset()
+  ->requested()
   ->update()
   ->message('John Doe have successfuly been saved')
   ->success()
