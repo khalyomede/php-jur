@@ -97,7 +97,7 @@ try {
 }
 catch( Exception $e ) {
   $response = JUR::message('an error occured while updating John Doe')
-    ->code( $pdo->errorInfo()[1] )
+    ->code( $pdo->errorInfo()[2] )
     ->error();
 }
 
@@ -132,7 +132,7 @@ catch( InvalidArgumentException $e ) {
 }
 catch( Exception $e ) {
   $response = JUR:message('an error occured while trying to fetch users')
-    ->code( $pdo->errorInfo()[1] )
+    ->code( $pdo->errorInfo()[2] )
     ->error();
 }
 
