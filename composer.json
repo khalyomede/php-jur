@@ -16,7 +16,10 @@
     "autoload": {
         "psr-4": {
             "Khalyomede\\": "src/"
-        }
+        },
+        "files": [
+            "src/function/jur.php"
+        ]
     },
     "require-dev": {
         "khalyomede/matcha": "0.*"
