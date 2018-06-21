@@ -2,11 +2,17 @@
 
 Json Uniform Response for PHP.
 
+![Packagist](https://img.shields.io/packagist/v/khalyomede/php-jur.svg)
+![PHP from Packagist](https://img.shields.io/packagist/php-v/khalyomede/php-jur.svg)
+![Packagist](https://img.shields.io/packagist/l/khalyomede/php-jur.svg)
+
 ## Summary
 
 - [Standard](#standard)
 - [Installation](#installation)
 - [Examples](#examples)
+
+For a support for PHP 5.X, please use the version 1.* of this library. Note the version 1.* is no longer maintained.
 
 ## Standard
 
